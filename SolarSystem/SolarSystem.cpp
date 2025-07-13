@@ -30,6 +30,14 @@ SolarSystem::SolarSystem()
 	initGLFW();
 	m_window = glfwCreateWindow(m_width, m_height, m_defaultTitle, nullptr, nullptr);
 }
+SolarSystem::~SolarSystem()
+{
+	if (m_window)
+	{
+		glfwDestroyWindow(m_window);
+	}
+	glfwTerminate();
+}
 
 void SolarSystem::Run()
 {

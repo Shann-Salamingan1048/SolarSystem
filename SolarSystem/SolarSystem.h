@@ -12,7 +12,14 @@ public:
 	SolarSystem();
 	SolarSystem(int width, int height);
     SolarSystem(bool fullScreen);
+    ~SolarSystem();
     void Run();
+
+private:
+    SolarSystem(const SolarSystem&) = delete;
+    SolarSystem& operator=(const SolarSystem&) = delete;
+    SolarSystem(SolarSystem&&) = delete;
+    SolarSystem& operator=(SolarSystem&&) = delete;
 
 private:
 	void initGLFW();
